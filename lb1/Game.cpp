@@ -1,8 +1,8 @@
 #include "Game.h"
 
-bool pazle::isRandomStarted = false;
+bool puzzle::isRandomStarted = false;
 
-pazle::pazle() {
+puzzle::puzzle() {
 	if (!isRandomStarted) {
 		srand(time(NULL));
 		isRandomStarted = true;
@@ -11,7 +11,7 @@ pazle::pazle() {
 	correctField();
 }
 
-std::wstring pazle::returnField() const {
+std::wstring puzzle::returnField() const {
 	wstring str;
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 4; j++) {
@@ -22,7 +22,7 @@ std::wstring pazle::returnField() const {
 	return str;
 }
 
-bool pazle::operator==(const pazle& game) const {
+bool puzzle::operator==(const puzzle& game) const {
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 4; j++) {
 			if (field[i][j] != game.field[i][j])
@@ -32,7 +32,7 @@ bool pazle::operator==(const pazle& game) const {
 	return true;
 }
 
-void pazle::fillField() {
+void puzzle::fillField() {
 	bool alreadyThere;
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 4;) {
@@ -59,7 +59,7 @@ void pazle::fillField() {
 	}
 }
 
-void pazle::showField() {
+void puzzle::showField() {
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 4; j++) {
 			cout << field[i][j] << "\t";
@@ -68,7 +68,7 @@ void pazle::showField() {
 	}
 }
 
-void pazle::correctField()
+void puzzle::correctField()
 {
 	int temp;
 	for (int i = 0; i < 4; i++) {
@@ -84,7 +84,7 @@ void pazle::correctField()
 	}
 }
 
-void pazle::movementRight()
+void puzzle::movementRight()
 {
 	if (y == 3) {
 		cout << "movement is not possible!" << endl;
@@ -97,7 +97,7 @@ void pazle::movementRight()
 	}
 }
 
-void pazle::movementLeft()
+void puzzle::movementLeft()
 {
 	if (y == 0) {
 		cout << "movement is not possible!" << endl;
@@ -110,7 +110,7 @@ void pazle::movementLeft()
 	}
 }
 
-void pazle::movementDown()
+void puzzle::movementDown()
 {
 	if (x == 3) {
 		cout << "movement is not possible!" << endl;
@@ -123,7 +123,7 @@ void pazle::movementDown()
 	}
 }
 
-void pazle::movementUp()
+void puzzle::movementUp()
 {
 	if (x == 0) {
 		cout << "movement is not possible!" << endl;
@@ -136,7 +136,7 @@ void pazle::movementUp()
 	}
 }
 
-void pazle::checkVictory()
+void puzzle::checkVictory()
 {
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 3; j++) {

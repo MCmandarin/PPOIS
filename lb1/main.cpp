@@ -5,7 +5,7 @@ int main()
 	printMenu();
 	int variant;
 	int movement;
-	pazle game;
+	puzzle game;
 
 	cin >> variant;
 

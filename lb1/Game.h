@@ -4,10 +4,10 @@
 
 using namespace std;
 
-class pazle
+class puzzle
 {
 public:
-	pazle();
+	puzzle();
 
 	void fillField();
 
@@ -27,7 +27,7 @@ public:
 
 	std::wstring returnField() const;
 
-	bool operator==(const pazle& game) const;
+	bool operator==(const puzzle& game) const;
 
 private:
 	int field[4][4];
